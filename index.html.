@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Color Challenge</title>
+
+<style>
+
+body{font-family:Arial;text-align:center;background:#f3f5fa;padding:15px}
+
+h1{color:#293b80}
+
+#board{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;max-width:500px;margin:20px auto}
+
+.cell{min-height:55px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:bold;color:white;font-size:13px;flex-direction:column}
+
+.red{background:#e74c3c}.blue{background:#3498db}.green{background:#27ae60}.yellow{background:#f1c40f;color:#222}
+
+.player{outline:4px solid #222}.computer{border:4px dashed white}
+
+button{padding:12px 20px;border:0;border-radius:9px;background:#293b80;color:white;font-size:16px;margin:7px}
+
+#message{font-size:17px;font-weight:bold;margin:15px}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🎨 Color Challenge</h1>
+
+<p>Race against the computer to reach space 40!</p>
+
+<h2 id="turn">Your turn!</h2>
+
+<h2>🎲 Dice: <span id="dice">-</span></h2>
+
+<div id="board"></div>
+
+<h3>You: <span id="you">0</span> | Computer: <span id="cpu">0</span></h3>
+
+<button onclick="rollDice()" id="roll">Roll Dice 🎲</button>
+
+<div id="message">Good luck!</div>
+
+<script>
+
+let positions=[0,0],turn=0,gameOver=false;
+
+const colors=["red","blue","green","yellow"];
+
+const questions={
+
+red:[
+
+["What is the capital of Kuwait?","kuwait city"],
+
+["How many days are in a week?","7"],
+
+["What planet do we live on?","earth"],
+
+["What is the largest ocean?","pacific ocean"],
+
+["How many months are in a year?","12"]
+
+],
+
+blue
